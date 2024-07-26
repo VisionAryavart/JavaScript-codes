@@ -1,0 +1,38 @@
+Glowing bulb
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bulb Glowing Effect</title>
+    <style>
+        .bulb {
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+            transition: background-color 0.5s, box-shadow 0.5s;
+        }
+
+        .glow {
+            background-color: yellow;
+            box-shadow: 0 0 50px rgba(255, 255, 0, 1);
+        }
+    </style>
+</head>
+<body>
+    <div class="bulb" id="bulb"></div>
+    <button id="toggle">Toggle Glow</button>
+
+    <script>
+        const bulb = document.getElementById("bulb");
+        const button = document.getElementById("toggle");
+
+        button.addEventListener("click", () => {
+            bulb.classList.toggle("glow");
+        });
+    </script>
+</body>
+</html>
+
