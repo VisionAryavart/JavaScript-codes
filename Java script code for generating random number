@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+</head>
+<body>
+    <div id="score">Score: 0</div>
+    <div id="para">Comment</div>
+    <script>
+        // Get the score element
+        const scoreElement = document.getElementById("score");
+const textElement = document.getElementById("para");
+let count = 0;
+        // Function to handle the guessing game logic
+        function guessingNumber(guessedNumber) {
+            
+            let a = Math.floor(1 +99 * Math.random());
+
+            if (a > guessedNumber) {
+                textElement.innerText = (`Your number is less than the guessed number that is ${a}`);
+            } else if (a == guessedNumber) {
+                alert("Congrats! Your number is the same");
+                count++;
+                scoreElement.innerText = `Score: ${count}`;
+            } else {
+textElement.innerText = (`Your number is greater than the guessed number that is ${a}`);
+            }
+        }
+
+        // Prompt user to enter a number between 1 to 100
+        let guessedNumber = parseInt(prompt("Enter a number between 1 to 100"));
+        guessingNumber(guessedNumber);
+    </script>
+</body>
+</html>
