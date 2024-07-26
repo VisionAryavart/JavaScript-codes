@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Joke</title>
+</head>
+<body>
+    <div id="jokes">Click the button to get a joke</div>
+    <div id="button">Click here</div>
+
+    <script>
+        // Get the joke paragraph and button elements
+        let para = document.getElementById("jokes");
+        let btn = document.getElementById("button");
+        
+        // Use a joke API, for example, the Official Joke API
+        let url = "https://official-joke-api.appspot.com/random_joke";
+
+        // Define the async function to fetch the joke
+        const getJokes = async () => {
+            try {
+                let response = await fetch(url);
+                let result = await response.json();
+                para.innerText = `${result.setup} - ${result.punchline}`;
+            } catch (error) {
+                para.innerText = "Failed to fetch joke, please try again!";
+                console.error("Error fetching the joke:", error);
+            }
+        }
+
+        // Add click event listener to the button
+        btn.addEventListener("click", getJokes);
+    </script>
+</body>
+</html>
