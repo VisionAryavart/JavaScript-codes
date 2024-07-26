@@ -10,11 +10,11 @@
     <div id="score">Score: 0</div>
     <div id="para">Comment</div>
     <script>
-        // Get the score element
+    
         const scoreElement = document.getElementById("score");
 const textElement = document.getElementById("para");
 let count = 0;
-        // Function to handle the guessing game logic
+    
         function guessingNumber(guessedNumber) {
             
             let a = Math.floor(1 +99 * Math.random());
@@ -30,7 +30,7 @@ textElement.innerText = (`Your number is greater than the guessed number that is
             }
         }
 
-        // Prompt user to enter a number between 1 to 100
+        
         let guessedNumber = parseInt(prompt("Enter a number between 1 to 100"));
         guessingNumber(guessedNumber);
     </script>
